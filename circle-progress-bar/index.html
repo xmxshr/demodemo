@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .circle-wrapper {
+      position: relative;
+      margin: 50px;
+      height: 140px;
+      width: 140px;
+    }
+
+    .circle {
+      width: 100px;
+      height: 100px;
+      background: #323a45;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .circle>span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: #fff;
+    }
+
+    .circle>span span {
+      font-size: 14px;
+      vertical-align: super;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .right-circle,
+    .left-circle {
+      position: absolute;
+      top: 0;
+      height: 140px;
+      width: 70px;
+      overflow: hidden;
+    }
+
+    .left-circle {
+      left: 0;
+    }
+
+    .right-circle {
+      right: 0;
+    }
+
+    .right-circle::after,
+    .left-circle::after {
+      content: '';
+      width: 100px;
+      height: 100px;
+      border: 20px solid transparent;
+      border-radius: 50%;
+      transform: rotate(-135deg);
+      position: absolute;
+      top: 0;
+    }
+
+    .right-circle::after {
+      right: 0;
+      border-top: 20px solid #14b9d6;
+      border-right: 20px solid #14b9d6;
+      animation: 3s right-circle linear;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+    }
+
+    .left-circle::after {
+      left: 0;
+      border-bottom: 20px solid #14b9d6;
+      border-left: 20px solid #14b9d6;
+      animation: 3s left-circle linear;
+      animation-fill-mode: forwards;
+      -webkit-animation-fill-mode: forwards;
+    }
+
+    @keyframes right-circle {
+      0% {
+        transform: rotate(-135deg)
+      }
+      50% {
+        transform: rotate(45deg)
+      }
+      100% {
+        transform: rotate(45deg)
+      }
+    }
+
+    @keyframes left-circle {
+      0% {
+        transform: rotate(-135deg)
+      }
+      50% {
+        transform: rotate(-135deg)
+      }
+      100% {
+        transform: rotate(-26deg)
+      }
+    }
+    /* @keyframes left-circle {
+      0% {
+        transform: rotate(-135deg)
+      }
+      50% {
+        transform: rotate(-135deg)
+      }
+      100% {
+        transform: rotate(45deg)
+      }
+    } */
+  </style>
+
+</head>
+
+<body>
+  <div class="circle-wrapper">
+    <div class="circle">
+  <!-- span如果有缝隙  % 就不会在上边 而是在中间 -->
+      <span>79<span>%</span></span>
+    </div>
+    <div class="left-circle"></div>
+    <div class="right-circle"></div>
+  </div>
+</body>
+
+</html>
