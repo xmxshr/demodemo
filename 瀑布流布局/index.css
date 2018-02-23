@@ -1,0 +1,22 @@
+.container{
+  position: relative; 
+}
+.container .item{
+  position: absolute; 
+  width: 200px;
+  margin-top: 10px;
+  margin-right: 10px;
+  transition: all 1s;
+}
+.container .h1{
+  height: 400px;
+  background-color: #aff;
+}
+.container .h2{
+  height: 200px;
+  background-color: #72c;
+}
+.container .h3{
+  height: 300px;
+  background-color: #190;
+}
