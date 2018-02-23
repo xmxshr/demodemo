@@ -1,0 +1,22 @@
+ul,li{
+  list-style: none;
+}
+.container{
+  max-width: 560px;
+  margin: 0 auto;
+}
+.container:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.container li{
+  float: left;
+  margin: 10px 10px;
+}
+.container li img{
+  width: 260px;
+}
+#hello{
+  float: left;  
+}
